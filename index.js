@@ -66,7 +66,7 @@ async function run(){
     //new
     app.get('/jobs/:id', async (req, res) => {
         const id = req.params.id;
-        const query = { _id: new ObjectId(id) };
+        const query = { _id: ObjectId(id) };
         const b = await jobOn.findOne(query);
         res.send(b);
     });
